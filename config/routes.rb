@@ -1,4 +1,13 @@
 LanguageNetwork::Application.routes.draw do
+  get "home/index" => "home#index"
+
+  resources :sessions, :only => [:new, :create]
+  match "logout" => "sessions#destroy", :as => "logout"
+  match "login" => "sessions#new", :as => "login"
+
+  resources :users
+
+  root :to => "home#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
