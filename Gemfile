@@ -36,7 +36,8 @@ end
 gem 'jquery-rails'
 gem 'haml-rails'
 
-gem "sorcery"
+gem 'sorcery'
+gem 'carrierwave'
 
 
 # To use ActiveModel has_secure_password

@@ -19469,3 +19469,32 @@ Served asset /application.js - 304 Not Modified (0ms)
 
 
 Started GET "/users/__meta_request/be5120879a9c46c3e5ba2788cbf88c00.json" for 127.0.0.1 at 2013-07-18 20:31:33 -0700
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (42.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20130717225358)
+Migrating to CreateDiscussions (20130718012031)
+Migrating to CreateMessages (20130718013832)
+Migrating to CreateComments (20130718013949)
+Migrating to CreateLanguages (20130718015429)
+Migrating to CreateKnownLanguages (20130718015534)
+Migrating to CreateDesiredLanguages (20130718015553)
+Migrating to CreateKnownLanguagesUsers (20130718015700)
+Migrating to CreateDesiredLanguagesUsers (20130719005007)
+Migrating to AddEventIdToComments (20130719214727)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (79.4ms)[0m  [1mALTER TABLE "comments" ADD COLUMN "event_id" integer[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "comments" ADD COLUMN "user_id" integer
+  [1m[36m (39.8ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130719214727')[0m
+  [1m[35m (36.3ms)[0m  COMMIT
+Migrating to AddSenderReceiverToMessages (20130719215132)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "messages" ADD COLUMN "sender_id" integer
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "messages" ADD COLUMN "receiver_id" integer[0m
+  [1m[35m (169.0ms)[0m  ALTER TABLE "discussions" DROP "user_id"
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130719215132')[0m
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
