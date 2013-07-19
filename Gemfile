@@ -38,6 +38,7 @@ gem 'haml-rails'
 
 gem 'sorcery'
 gem 'carrierwave'
+gem 'annotate'
 
 
 # To use ActiveModel has_secure_password
