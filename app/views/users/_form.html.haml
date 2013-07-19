@@ -20,11 +20,26 @@
     = f.password_field :password_confirmation
   .field
     = f.label :gender
-    <br>
+    %br
     = f.label "Male"
     = f.radio_button :gender, "Male"
-    <br>
+    %br
     = f.label "Female"
     = f.radio_button :gender, "Female"
+  .field
+    = f.label :known_languages
+    %br
+    - @known_languages.each do |language|
+      = check_box_tag "user[known_language_ids][]",language.id
+      / , @user.known_languages.include?(language)
+      = f.label "#{language.name}"
+      %br
+  .field
+    = f.label :desired_languages
+    %br
+    - @desired_languages.each do |language|
+      = check_box_tag "user[desired_language_ids][]",language.id
+      = f.label "#{language.name}"
+      %br
   .actions
     = f.submit 'Register'
