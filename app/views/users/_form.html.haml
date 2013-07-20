@@ -30,15 +30,14 @@
     = f.label :known_languages
     %br
     - @known_languages.each do |language|
-      = check_box_tag "user[known_language_ids][]",language.id
-      / , @user.known_languages.include?(language)
+      = check_box_tag "user[known_language_ids][]",language.id, @user.known_languages.include?(language)
       = f.label "#{language.name}"
       %br
   .field
     = f.label :desired_languages
     %br
     - @desired_languages.each do |language|
-      = check_box_tag "user[desired_language_ids][]",language.id
+      = check_box_tag "user[desired_language_ids][]",language.id, @user.desired_languages.include?(language)
       = f.label "#{language.name}"
       %br
   .actions

@@ -1,4 +1,12 @@
 LanguageNetwork::Application.routes.draw do
+  get "messages/index"
+
+  get "messages/show"
+
+  get "messages/new"
+
+  get "messages/create"
+
   get "home/index" => "home#index"
 
   resources :sessions, :only => [:new, :create]
@@ -6,6 +14,7 @@ LanguageNetwork::Application.routes.draw do
   match "login" => "sessions#new", :as => "login"
 
   resources :users
+  resources :messages
 
   root :to => "home#index"
   # The priority is based upon order of creation:

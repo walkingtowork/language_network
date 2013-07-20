@@ -10,6 +10,8 @@
   %b Gender:
   = @user.gender
 
+= link_to 'Say Hi!', new_message_path(@user)
+
 = link_to 'Edit', edit_user_path(@user)
 \|
 = link_to 'Back', users_path

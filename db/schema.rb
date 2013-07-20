@@ -11,9 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130719215132) do
+ActiveRecord::Schema.define(:version => 20130719221949) do
 
   create_table "comments", :force => true do |t|
+    t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "event_id"
@@ -28,13 +29,6 @@ ActiveRecord::Schema.define(:version => 20130719215132) do
   create_table "desired_languages_users", :force => true do |t|
     t.integer "desired_language_id"
     t.integer "user_id"
-  end
-
-  create_table "discussions", :force => true do |t|
-    t.text     "content"
-    t.string   "type"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "known_languages", :force => true do |t|
@@ -55,10 +49,13 @@ ActiveRecord::Schema.define(:version => 20130719215132) do
   end
 
   create_table "messages", :force => true do |t|
+    t.text     "content"
+    t.boolean  "unread"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.integer  "sender_id"
     t.integer  "receiver_id"
+    t.string   "subject"
   end
 
   create_table "users", :force => true do |t|

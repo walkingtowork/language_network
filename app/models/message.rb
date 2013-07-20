@@ -9,8 +9,9 @@
 #  updated_at :datetime         not null
 #
 
-class Message < Discussion
-  attr_accessible :sender_id, :receiver_id
+class Message < ActiveRecord::Base
+  attr_accessible :sender_id, :receiver_id, :subject, :text, :unread
+
   belongs_to :sender, :class_name => "User"
   belongs_to :receiver, :class_name => "User"
 end

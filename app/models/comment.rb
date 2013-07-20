@@ -9,7 +9,7 @@
 #  updated_at :datetime         not null
 #
 
-class Comment < Discussion
+class Comment < ActiveRecord::Base
   # attr_accessible :title, :body
   # hidden input for type in form
 end

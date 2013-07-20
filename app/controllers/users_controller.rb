@@ -37,6 +37,8 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
+    @known_languages = KnownLanguage.all
+    @desired_languages = DesiredLanguage.all
   end
 
   # POST /users
