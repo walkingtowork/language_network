@@ -46013,3 +46013,28 @@ Served asset /users.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-21 12:55:19 -0700
 Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+PG::Error: ERROR:  argument of WHERE must be type boolean, not type integer
+LINE 1: SELECT "users".* FROM "users"  WHERE (1)
+                                              ^
+: SELECT "users".* FROM "users"  WHERE (1)
+PG::Error: ERROR:  argument of WHERE must be type boolean, not type integer
+LINE 1: SELECT "users".* FROM "users"  WHERE (1)
+                                              ^
+: SELECT "users".* FROM "users"  WHERE (1)
+PG::Error: ERROR:  column users.receiver_id does not exist
+LINE 1: SELECT "users".* FROM "users"  WHERE "users"."receiver_id" =...
+                                             ^
+: SELECT "users".* FROM "users"  WHERE "users"."receiver_id" = 1
+PG::Error: ERROR:  invalid input syntax for integer: "---
+:id: 1
+"
+LINE 1: SELECT  "users".* FROM "users"  WHERE "users"."id" IN ('---
+                                                               ^
+: SELECT  "users".* FROM "users"  WHERE "users"."id" IN ('---
+:id: 1
+') LIMIT 1
+PG::Error: ERROR:  missing FROM-clause entry for table "id"
+LINE 1: SELECT  "users".* FROM "users"  WHERE "id"."id" = 1 LIMIT 1
+                                              ^
+: SELECT  "users".* FROM "users"  WHERE "id"."id" = 1 LIMIT 1

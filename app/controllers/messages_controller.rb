@@ -6,6 +6,8 @@ class MessagesController < ApplicationController
   def show
     @message = Message.find(params[:id])
     @message.update_attributes(:unread => false)
+
+    @reply = Message.new
   end
 
   def new

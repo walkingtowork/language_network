@@ -1,5 +1,6 @@
 %h1 Inbox
 
 - @messages.each do |message|
+  = message.sender.username
   = link_to message.subject, message
   %br

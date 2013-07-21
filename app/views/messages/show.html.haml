@@ -1,4 +1,10 @@
 %h1 Messages#show
 / %p Find me in app/views/messages/show.html.haml
-
+%p
+  From:
+  = @message.sender.username
 %p= @message.content
+%p *****
+
+%p Send a reply?
+= render 'reply_form'
