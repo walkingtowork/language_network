@@ -19,13 +19,15 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :desired_languages
   has_many :messages
 
-  attr_accessible :email, :gender, :password, :password_confirmation, :username, :known_language_ids, :desired_language_ids, :address, :latitude, :longitude
+  attr_accessible :email, :gender, :password, :password_confirmation, :username, :known_language_ids, :desired_language_ids, :address, :latitude, :longitude, :image
 
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?
 
   validates :username, :uniqueness => true
   validates :email, :uniqueness => true
+
+  mount_uploader :image, ImageUploader
 
   def received_messages
     Message.where(:receiver_id => self.id)

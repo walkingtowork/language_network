@@ -37,8 +37,13 @@ gem 'jquery-rails'
 gem 'haml-rails'
 
 gem 'sorcery'
+
 gem 'carrierwave'
+gem "fog", "~> 1.3.1"
+gem 'rmagick'
+
 gem 'annotate'
+
 gem 'geocoder'
 
 
