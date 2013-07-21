@@ -10,7 +10,7 @@
   %b Gender:
   = @user.gender
 
-= link_to 'Say Hi!', new_message_path(@user)
+= link_to 'Say Hi!', new_message_path(:user_id => @user.id)
 
 = link_to 'Edit', edit_user_path(@user)
 \|

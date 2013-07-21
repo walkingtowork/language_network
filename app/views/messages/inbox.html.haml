@@ -1,0 +1,5 @@
+%h1 Inbox
+
+- @messages.each do |message|
+  = link_to message.subject, message
+  %br

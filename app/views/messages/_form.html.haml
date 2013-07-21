@@ -8,6 +8,8 @@
   .field
     = f.hidden_field :sender_id, value: current_user.id
   .field
+    = f.hidden_field :receiver_id, value: @user.id
+  .field
     = f.label :subject
     = f.text_field :subject
   .field
