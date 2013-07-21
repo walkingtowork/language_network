@@ -2,11 +2,15 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    if params[:search].present?
+      @users = User.near(params[:search], 30, :order => :distance)
+    else
+      @users = User.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @users }
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @users }
+      end
     end
   end
 

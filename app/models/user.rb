@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :gender, :password, :password_confirmation, :username, :known_language_ids, :desired_language_ids, :address, :latitude, :longitude
 
   geocoded_by :address
-  after_validation :geocode
+  after_validation :geocode, :if => :address_changed?
 
   validates :username, :uniqueness => true
   validates :email, :uniqueness => true

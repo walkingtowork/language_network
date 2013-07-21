@@ -7,7 +7,8 @@
     %th Gender
     %th Known Languages
     %th Desired Languages
-    %th
+    %th Location
+    %th Admin
 
   - @users.each do |user|
 
@@ -17,7 +18,8 @@
       %td= user.gender
       %td= user.known_languages.map {|language| language.name.chomp }
       %td= user.desired_languages.map {|language| language.name.chomp }
-      %td= link_to 'Show', user
+      %td= user.address
+      / %td= link_to 'Show', user
       %td= link_to 'Edit', edit_user_path(user)
       %td= link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
