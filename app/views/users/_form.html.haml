@@ -27,6 +27,9 @@
     = f.label "Female"
     = f.radio_button :gender, "Female"
   .field
+    = f.label :address
+    = f.text_field :address
+  .field
     = f.label :known_languages
     %br
     - @known_languages.each do |language|

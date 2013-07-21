@@ -19,7 +19,10 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :desired_languages
   has_many :messages
 
-  attr_accessible :email, :gender, :password, :password_confirmation, :username, :known_language_ids, :desired_language_ids
+  attr_accessible :email, :gender, :password, :password_confirmation, :username, :known_language_ids, :desired_language_ids, :address, :latitude, :longitude
+
+  geocoded_by :address
+  after_validation :geocode
 
   validates :username, :uniqueness => true
   validates :email, :uniqueness => true

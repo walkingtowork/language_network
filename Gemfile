@@ -39,6 +39,7 @@ gem 'haml-rails'
 gem 'sorcery'
 gem 'carrierwave'
 gem 'annotate'
+gem 'geocoder'
 
 
 # To use ActiveModel has_secure_password
