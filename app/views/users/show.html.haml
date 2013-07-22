@@ -1,41 +1,39 @@
 %br
-%div.profile_image
-  = image_tag @user.image
+= image_tag @user.image, :class => "profile_image"
 
-%p
-  %b Username:
-  = @user.username
-%p
-  %b Email:
-  = @user.email
-%p
-  %b Gender:
-  = @user.gender
-%p
-  %b Known Languages:
-  - known_languages = @user.known_languages.map { |language| language.name }
-  %ul
-    -known_languages.each do |language|
-      %li= language
-%p
-  %b Desired Languages:
-  - desired_languages = @user.desired_languages.map { |language| language.name }
-  %ul
-    -desired_languages.each do |language|
-      %li= language
-%p
-  %b About Me:
-  = @user.about_me
-%p
-  %b Hobbies:
-  = @user.hobbies
-%p
-  %b Somewhere Awesome:
-  = @user.place_to_visit
+.profile_text_box
+  %p
+    %b Username:
+    = @user.username
+  %p
+    %b Email:
+    = @user.email
+  %p
+    %b Gender:
+    = @user.gender
+  %p
+    %b Known Languages:
+    - known_languages = @user.known_languages.map { |language| language.name }
+    %ul
+      -known_languages.each do |language|
+        %li= language
+  %p
+    %b Desired Languages:
+    - desired_languages = @user.desired_languages.map { |language| language.name }
+    %ul
+      -desired_languages.each do |language|
+        %li= language
+  %p
+    %b About Me:
+    = @user.about_me
+  %p
+    %b Hobbies:
+    = @user.hobbies
+  %p
+    %b Somewhere Awesome:
+    = @user.place_to_visit
 
 
-= link_to 'Say Hi!', new_message_path(:user_id => @user.id)
-
-/ = link_to 'Edit', edit_user_path(@user)
-/ \|
-= link_to 'Back', users_path
+  = link_to 'Say Hi!', new_message_path(:user_id => @user.id)
+  \|
+  = link_to 'Back', users_path

@@ -1,4 +1,4 @@
-%h1 Listing users
+%h1 Who would you like to babble with?
 
 - @users.each do |user|
   .user_box
@@ -7,6 +7,7 @@
     = image_tag user.image, :class => "user_index_thumb"
     %br
     = user.address
+    %br
     %br
     Let's Practice:
     - desired_languages = user.desired_languages.map { |language| language.name }

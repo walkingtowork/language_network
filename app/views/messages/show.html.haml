@@ -5,8 +5,9 @@
 / %p
 /   From:
 /   = @message.sender.username
-%p= @message.content
-%p *****
+.message_box
+  %p= @message.content
+  %p *****
 
-%p Send a reply?
-= render 'reply_form'
+  %p Send a reply?
+  = render 'reply_form'
