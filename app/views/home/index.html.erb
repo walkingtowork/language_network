@@ -1,8 +1,9 @@
 <br>
-Find Users in your location!
+Find Users in your area!
 <%= form_tag users_path, :method => :get do %>
   <p>
-    <%= text_field_tag :search, params[:search] %>
+    <%= text_field_tag :location_search, params[:location_search] %>
+
     <%= submit_tag "Search", :name => nil %>
   </p>
 <% end %>

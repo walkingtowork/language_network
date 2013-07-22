@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :desired_languages
   has_many :messages
 
-  attr_accessible :email, :gender, :password, :password_confirmation, :username, :known_language_ids, :desired_language_ids, :address, :latitude, :longitude, :image
+  attr_accessible :email, :gender, :password, :password_confirmation, :username, :known_language_ids, :desired_language_ids, :address, :latitude, :longitude, :image, :about_me, :hobbies, :place_to_visit
 
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?

@@ -2,8 +2,9 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    if params[:search].present?
-      @users = User.near(params[:search], 30, :order => :distance)
+    if params[:location_search].present?
+      @users = User.near(params[:location_search], 30, :order => :distance)
+      # Finds users within 30 miles
     else
       @users = User.all
 
