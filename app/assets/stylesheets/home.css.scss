@@ -1,3 +1,23 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// .front_image {
+//   max-height: 500px;
+//   max-width: 500px;
+//   margin: 0 auto;
+//   display: block;
+// }
+body {
+  // background: url(/images/babel_full.jpg) no-repeat center center fixed;
+  //  -webkit-background-size: cover;
+  //  -moz-background-size: cover;
+  //  -o-background-size: cover;
+  //  background-size: cover;
+}
+
+#search {
+ background-color:rgba(0,0,0,0.5);
+ color: white;
+ margin: 30% auto 0 auto;
+ padding: 20px;
+ text-align: center;
+
+}
+

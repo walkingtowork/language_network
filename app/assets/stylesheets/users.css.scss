@@ -1,9 +1,31 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 .scrollable_list {
   border:1px solid black;
   height:300px;
   width:170px;
   overflow:auto;
+}
+.profile_image {
+  max-height: 200px;
+  max-width: 200px;
+}
+
+body {
+  background-color: #63AFD0;
+}
+
+.user_index_thumb {
+  max-height: 100px;
+  max-width: 100px;
+}
+
+.user_box {
+  border: 1px solid black;
+  width: 160px;
+  height: 200px;
+  float: left;
+  padding: 5px;
+  text-align: center;
+  overflow: hidden;
+  color: white;
+  background-color:rgba(0,0,0,0.5);
 }
