@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>LanguageNetwork</title>
+  <title>Babel</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -11,7 +11,9 @@
     <p>You are logged in as <%= current_user.username %></p>
     <%= link_to("Home", root_path) %>
     <%= link_to("Inbox", inbox_path) %>
+    <%= link_to("Edit Profile", edit_profile_path) %>
     <%= link_to("Log Out", logout_path) %>
+
   <% else %>
     <%= link_to("Sign Up", new_user_path) %>
     <%= link_to("Log In", new_session_path) %>

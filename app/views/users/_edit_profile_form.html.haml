@@ -1,0 +1,62 @@
+= form_for @user, :html_options => {:multipart => true} do |f|
+  - if @user.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+      %ul
+        - @user.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :username
+    = f.text_field :username
+  .field
+    = f.label :email
+    = f.text_field :email
+  / .field
+  /   = f.label :password
+  /   = f.password_field :password
+  / .field
+  /   = f.label :password_confirmation
+  /   = f.password_field :password_confirmation
+  .field
+    = f.label :image
+    = f.file_field :image
+  .field
+    = f.label :gender
+    %br
+    = f.label "Male"
+    = f.radio_button :gender, "Male"
+    %br
+    = f.label "Female"
+    = f.radio_button :gender, "Female"
+  .field
+    = f.label :address
+    = f.text_field :address
+  .field
+    = f.label :known_languages
+    %br
+    - @known_languages.each do |language|
+      = check_box_tag "user[known_language_ids][]",language.id, @user.known_languages.include?(language)
+      = f.label "#{language.name}"
+      %br
+  .field
+    = f.label :desired_languages
+    %br
+    - @desired_languages.each do |language|
+      = check_box_tag "user[desired_language_ids][]",language.id, @user.desired_languages.include?(language)
+      = f.label "#{language.name}"
+      %br
+  .field
+    = f.label "about_me:"
+    %br
+    = f.text_area :about_me
+  .field
+    = f.label "hobbies:"
+    %br
+    = f.text_area :about_me
+  .field
+    = f.label "Somewhere awesome:"
+    %br
+    = f.text_area :place_to_visit
+  .actions
+    = f.submit 'Update'

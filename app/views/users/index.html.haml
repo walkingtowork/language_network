@@ -8,7 +8,7 @@
     %th Known Languages
     %th Desired Languages
     %th Location
-    %th Admin
+    / %th Admin
 
   - @users.each do |user|
 
@@ -27,9 +27,7 @@
           -desired_languages.each do |language|
             %li= language
       %td= user.address
-      / %td= link_to 'Show', user
-      %td= link_to 'Edit', edit_user_path(user)
-      %td= link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      / %td= link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 

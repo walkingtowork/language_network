@@ -5,7 +5,10 @@ LanguageNetwork::Application.routes.draw do
   match "logout" => "sessions#destroy", :as => "logout"
   match "login" => "sessions#new", :as => "login"
 
+  match "users/edit" => "users#edit", :as => "edit_profile"
   resources :users
+
+
   get "messages/inbox" => "messages#inbox", :as => "inbox"
   resources :messages
 

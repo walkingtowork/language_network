@@ -1,8 +1,10 @@
-%h1 Messages#show
-/ %p Find me in app/views/messages/show.html.haml
-%p
-  From:
+%h1
   = @message.sender.username
+  says:
+/ %p Find me in app/views/messages/show.html.haml
+/ %p
+/   From:
+/   = @message.sender.username
 %p= @message.content
 %p *****
 
