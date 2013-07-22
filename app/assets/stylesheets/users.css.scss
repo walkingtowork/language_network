@@ -1,6 +1,6 @@
 .scrollable_list {
-  border:1px solid black;
-  height:300px;
+  // border:1px solid black;
+  height:200px;
   width:170px;
   overflow:auto;
 }
@@ -11,6 +11,8 @@
 
 body {
   background-color: #63AFD0;
+  color: white;
+  text-align: center;
 }
 
 .user_index_thumb {
@@ -23,9 +25,29 @@ body {
   width: 160px;
   height: 200px;
   float: left;
-  padding: 5px;
+  padding: 0 5px;
   text-align: center;
   overflow: hidden;
   color: white;
   background-color:rgba(0,0,0,0.5);
+}
+.first_row {
+  background-color:rgba(0,0,0,0.5);
+  // border: 1px solid black;
+  overflow: hidden;
+}
+.edit_box {
+  text-align: left;
+  float: left;
+  padding:0 50px;
+}
+.text_box {
+  margin: 0 auto;
+  text-align: center;
+  background-color:rgba(0,0,0,0.5);
+}
+
+input[type="text"], textarea {
+  color: white;
+  background-color : rgba(0,0,0,0.3);
 }
