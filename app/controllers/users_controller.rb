@@ -5,6 +5,8 @@ class UsersController < ApplicationController
     if params[:location_search].present?
       @users = User.near(params[:location_search], 30, :order => :distance)
       # Finds users within 30 miles
+      @users.select!{|x| x.known_languages.map(&:name).include?(params[:language_search])}
+
     else
       @users = User.all
 

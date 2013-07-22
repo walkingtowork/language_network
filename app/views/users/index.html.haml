@@ -16,8 +16,16 @@
       %td= link_to user.username, user
       %td= user.email
       %td= user.gender
-      %td= user.known_languages.map {|language| language.name.chomp }
-      %td= user.desired_languages.map {|language| language.name.chomp }
+      - known_languages = user.known_languages.map {|language| language.name.chomp }
+      %td
+        %ul
+          -known_languages.each do |language|
+            %li= language
+      - desired_languages = user.desired_languages.map {|language| language.name.chomp }
+      %td
+        %ul
+          -desired_languages.each do |language|
+            %li= language
       %td= user.address
       / %td= link_to 'Show', user
       %td= link_to 'Edit', edit_user_path(user)
