@@ -6,7 +6,14 @@ class UsersController < ApplicationController
       @users = User.near(params[:location_search], 30, :order => :distance)
       # Finds users within 30 miles
       @users.select!{|x| x.known_languages.map(&:name).include?(params[:language_search])}
+    #elsif params[:location_search].present? && params[:interest_search].present?
 
+    # Doesn't fully work yet:
+    elsif params[:interest_search].present?
+      @interest_search = User.search do
+        fulltext params[:interest_search]
+      end
+      @users = @interest_search.results
     else
       @users = User.all
 
@@ -37,7 +44,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @user }
+      format.js
     end
   end
 
@@ -57,10 +64,10 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render json: @user, status: :created, location: @user }
+        format.js
       else
         format.html { render action: "new" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end

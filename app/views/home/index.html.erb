@@ -10,6 +10,8 @@
       <%= label_tag :language_search, "Which language?" %>
       <%= text_field_tag :language_search, params[:language_search] %>
       <br>
+      <%= label_tag :interest_search, "Which interests?" %>
+      <%= text_field_tag :interest_search, params[:interest_search] %>
       <%= submit_tag "Search", :name => nil %>
     </p>
   <% end %>

@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+  # before_filter :require_login, :only => :new
   def index
     #@messages = Message.all
   end

@@ -6,6 +6,7 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+gem 'zurb-foundation'
 
 group :development do
   gem 'pry-rails'
@@ -46,6 +47,10 @@ gem 'annotate'
 
 gem 'geocoder'
 
+gem 'sunspot_rails'
+group :development do
+   gem 'sunspot_solr'
+ end
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'

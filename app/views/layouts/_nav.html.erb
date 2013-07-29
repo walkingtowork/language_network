@@ -1,0 +1,15 @@
+<nav class="top-bar">
+  <% if current_user %>
+    <p>You are logged in as <%= current_user.username %></p>
+    <%= link_to("Home", root_path) %>
+    <%= link_to("Inbox", inbox_path) %>
+    <%= link_to("Edit Profile", edit_profile_path) %>
+    <%= link_to("Log Out", logout_path) %>
+
+  <% else %>
+    <%= link_to("Sign Up", new_user_path) %>
+    <%= link_to("Log In", new_session_path) %>
+    <%= link_to "Login (AJAX)", :login, :remote => true, :data => {"reveal-id" => "login_window"} %>
+    <%= link_to "Register (AJAX)", new_user_path, :remote => true, :data => {"reveal-id" => "signup_window"} %>
+  <% end %>
+</nav>

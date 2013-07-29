@@ -37,4 +37,8 @@ class User < ActiveRecord::Base
     Message.where(:sender_id => self.id)
   end
 
+  searchable do
+    text :username, :email, :gender, :about_me, :hobbies, :place_to_visit
+  end
+
 end
